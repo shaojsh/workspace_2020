@@ -10,11 +10,8 @@ from selenium import webdriver
 
 class buy_tickets:
     def buy_tickets(self, num):
-        # f = webdriver.FirefoxProfile() css加载 f.set_preference("permissions.default.stylesheet",
-        # 2) f.set_preference("permissions.default.image", 2) self.driver = webdriver.Firefox(
-        # executable_path='C:\Program Files\Mozilla Firefox\geckodriver',firefox_profile=f)
         self.driver = webdriver.Chrome()
-        self.driver.implicitly_wait(10)
+        self.driver.implicitly_wait(30)
         # 告知数据源的路径
         path = "C://Users//86176//Desktop//inputData.xlsx"
         # 实例化对象
@@ -72,7 +69,7 @@ class buy_tickets:
         try:
             while True:
                 i += 1
-                time.sleep(1)
+                time.sleep(2)
                 tomorrow.click()
                 # 车的种类
                 typeTrain = self.dataList[num][7]

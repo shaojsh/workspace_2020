@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/MySlenium" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MySlenium/12306" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/hello/123" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/hello" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MyScrapy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Crawler" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Crawler/MovieAndSong" isTestSource="false" />
+    </content>
     <orderEntry type="jdk" jdkName="Python 3.6 (python-workspace)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
