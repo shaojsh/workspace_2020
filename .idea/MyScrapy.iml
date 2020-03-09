@@ -9,6 +9,11 @@
       <sourceFolder url="file://$MODULE_DIR$/MyScrapy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Crawler" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Crawler/MovieAndSong" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/static" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/templates" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/user" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/blog" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/application" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.6 (python-workspace)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
