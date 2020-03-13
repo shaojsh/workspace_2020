@@ -7,5 +7,5 @@ urlpatterns = [
     # url(r'^reg$', reg),
     url(r'^index', index),
     url(r'^blogDel-kugou', blogPostKogou),
-    url(r'^test', searchSong),
+    url('ajax_song/', ajax_song),
 ]

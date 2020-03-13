@@ -2,7 +2,7 @@ import logging
 
 # import simplejson
 from django.http import JsonResponse, HttpRequest, HttpResponseBadRequest
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 
 from .models import User
 
@@ -46,9 +46,10 @@ def blogPostKogou(request: HttpRequest):
     return render(request, 'blogDel-kugou.html')
 
 
-def searchSong(request):
-    if request == 'POST':
-        songName = request.POST['songforkugou']
-        context = {'b':songName}
-        print(songName)
-        return render(request, 'blogDel-kugou.html', context)
+def ajax_song(request):
+    if request.is_ajax():
+        print('--------------------------------------------hello world-----------------------------------')
+        song = request.GET.get("song")
+        return JsonResponse({'content':"这是ajax请求"})
+    else:
+        return JsonResponse({'content': "这是假的ajax请求"})

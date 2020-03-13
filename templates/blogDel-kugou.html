@@ -175,14 +175,28 @@
 
 <!--			    </div>-->
 
-				<form class="signup-form form-inline justify-content-center pt-3" action="test" method="post">
-					{% csrf_token %}
+				<div class="signup-form form-inline justify-content-center pt-3">
+                   {% csrf_token %}
                     <div class="form-group">
-                        <label class="sr-only" for="semail">歌手/歌曲</label>
+						<label class="sr-only" >歌手/歌曲<</label>
                         <input type = 'text' id="song" name="songforkugou" class="form-control mr-md-1 semail" placeholder="输入歌曲名或歌手名">
                     </div>
-                    <button type="submit" class="btn btn-primary">检索</button>
-                </form>
+                    <button type="submit" id = 'b1' class="btn btn-primary" onclick="">检索</button>
+                </div>
+                <textarea rows="3" cols="20" id="songdownload" name="songdownload" class="form-control mr-md-1 semail"></textarea>
+				<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+				<script>
+					$("#b1").on("click",function () {
+						$.ajax({
+							url:"http://127.0.0.1:8000/user/ajax_song",
+							type: 'get',
+							data:{"song":$("#song").val()},
+							success:function (data) {
+								$("#songdownload").val(data);
+							}
+						})
+					})
+				</script>
 			    <nav class="blog-nav nav nav-justified my-5">
 				  <a class="nav-link-prev nav-item nav-link rounded-left" href="index.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
 				  <a class="nav-link-next nav-item nav-link rounded-right" href="blog-list.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
