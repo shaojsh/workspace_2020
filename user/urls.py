@@ -8,4 +8,6 @@ urlpatterns = [
     url(r'^index', index),
     url(r'^blogDel-kugou', blogPostKogou),
     url('ajax_song/', ajax_song),
+    url(r'^blog-post', blogPost),
+    url(r'^uploadFiles', uploadFiles),
 ]

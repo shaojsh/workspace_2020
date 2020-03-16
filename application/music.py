@@ -53,7 +53,7 @@ def get_song(song_name):
             try:
                 songName = str(song_list[i]['FileName']).split('- ')
                 print(songName[1])
-                with open("music/" + str(songName[1])+ ".mp3", "wb")as fp:
+                with open("music/" + str(songName[1]) + ".mp3", "wb")as fp:
                     fp.write(requests.get(play_url).content)
                 print("歌曲已下载完成！")
                 i += 1
@@ -62,10 +62,10 @@ def get_song(song_name):
     else:
         file_hash = song_list[num - 1]['FileHash']
         hash_url = "http://www.kugou.com/yy/index.php?r=play/getdata&hash={}".format(file_hash)
-        # print(hash_url)
+        print(hash_url)
         hash_res = requests.get(hash_url, headers=headers2)
         hash_js = hash_res.json()  # json格式
-        # print(hash_js)
+        print(hash_js)
         play_url = hash_js['data']['play_url']
         # 下载歌曲
         try:
