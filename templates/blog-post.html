@@ -76,16 +76,31 @@
 				{% csrf_token %}
 					<br>
 					<div>
-					<input type="file" name="myfile" />
+					<input type="file" name="myfile" id = "fileUpload"/>
+					<input type="text" name="artTex" id = "artTex" placeholder="blog转载网址"/>
 					<input type="submit" value="upload" onclick = 'emptyFun()'/>
 					</div>
 					<br>
 					<div>
-					<textarea placeholder="description about your files" rows="3" cols="20" id="songdownload" name="songdownload" class="form-control mr-md-1 semail"></textarea>
+					<textarea placeholder="description about your files or blog" rows="3" cols="20" id="songdownload" name="songdownload" class="form-control mr-md-1 semail"></textarea>
 					</div>
                 </form>
 		    </div><!--//container-->
 	    </section>
+		<section class="blog-list px-3 py-5 p-md-5">
+					<div class="container">
+						<div class="item mb-5">
+							<div class="media">
+								<div class="media-body">
+									<h3 class="title mb-1"><a href="blogDel-kugou.html">酷狗音乐下载应用</a></h3>
+									<div class="meta mb-1"><span class="date">Published 2 days ago</span><span class="time">5 min read</span><span class="comment"><a href="#">8 comments</a></span></div>
+									<div class="intro">酷狗音乐是目前中国国内应用最为广泛的音乐播放软件之一，但大多数的音乐下载需要vip付费服务，so，为了免费服务，有了这款小爬虫的诞生...
+									</div>
+									<a class="more-link" href="blogDel-kugou.html">Read more &rarr;</a>
+								</div><!--//media-body-->
+							</div><!--//media-->
+						</div><!--//item-->
+		</dection>
 	    <section class="blog-list px-3 py-5 p-md-5">
 
 				<nav class="blog-nav nav nav-justified my-5">
@@ -132,6 +147,14 @@
 		var uploadEvt  = document.getElementById('songdownload').value.length;
 		if (uploadEvt == 0){
 			alert('请输入description');
+			return false;
+		}
+		var fileUpload = document.getElementById('fileUpload').value;
+		alert(fileUpload)
+		var artTex = document.getElementById('fileUpload').value.length;
+		alert(artTex)
+		if (!fileUpload && artTex == 0){
+			alert('请上传文件或者输入博客转载网址');
 			return false;
 		}
 	}
