@@ -7,7 +7,7 @@ from django.http import JsonResponse, HttpRequest, HttpResponseBadRequest
 from django.shortcuts import render, HttpResponse
 from application import music
 
-from .models import User
+from .models import BlogPost
 
 
 # Create your views here.
@@ -60,14 +60,26 @@ def ajax_song(request):
 
 
 def blogPost(request: HttpRequest):
-    return render(request, 'blog-post.html')
+    blogNetList = BlogPost.objects.all()  # 将数据全部展示至html中
+    return render(request, "blog-post.html", {"blogNetList": blogNetList})
 
 
 def uploadFiles(request: HttpRequest):
     if request.method == "POST":  # 请求方法为POST时，进行处理
         myFile = request.FILES.get("myfile", None)  # 获取上传的文件，如果没有文件，则默认为None
-        # if not myFile:
-        #     return HttpResponse("no files for upload!")
+        if not myFile:
+            des = request.POST.get('des')
+            blogNet = request.POST.get('blogNet')
+            if not blogNet:
+                return HttpResponse("no files or no blogNet for upload!")
+            else:
+                BlogPost.objects.create(  # 执行插入语句
+                    type=0,
+                    blogNet=blogNet,
+                    des=des
+                )
+            blogNetList = BlogPost.objects.all()  # 将数据全部展示至html中
+            return render(request, "blog-post.html", {"blogNetList": blogNetList})
         destination = open(os.path.join("E:\\upload", myFile.name), 'wb+')  # 打开特定的文件进行二进制的写操作
         for chunk in myFile.chunks():  # 分块写入文件
             destination.write(chunk)

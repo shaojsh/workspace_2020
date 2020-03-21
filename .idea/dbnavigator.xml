@@ -23,18 +23,22 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="false" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="e9810101-383e-4224-978a-67cc083f6d02">
+        <schema name="main" object-types="view, dataset trigger, constraint, column, table, index" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="f072fb94-c8f7-4c59-a4fe-0ee95d600a3c">
-      <console name="Connection" type="STANDARD" schema="" session="Main" />
+    <connection id="e9810101-383e-4224-978a-67cc083f6d02">
+      <console name="Connection" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="f072fb94-c8f7-4c59-a4fe-0ee95d600a3c" />
+    <connection id="e9810101-383e-4224-978a-67cc083f6d02" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -59,7 +63,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="f072fb94-c8f7-4c59-a4fe-0ee95d600a3c" active="true">
+      <connection id="e9810101-383e-4224-978a-67cc083f6d02" active="true">
         <database>
           <name value="Connection" />
           <description value="" />

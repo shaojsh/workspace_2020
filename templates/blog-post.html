@@ -77,12 +77,12 @@
 					<br>
 					<div>
 					<input type="file" name="myfile" id = "fileUpload"/>
-					<input type="text" name="artTex" id = "artTex" placeholder="blog转载网址"/>
+					<input type="text" name="blogNet" id = "blogNet" placeholder="blog转载网址"/>
 					<input type="submit" value="upload" onclick = 'emptyFun()'/>
 					</div>
 					<br>
 					<div>
-					<textarea placeholder="description about your files or blog" rows="3" cols="20" id="songdownload" name="songdownload" class="form-control mr-md-1 semail"></textarea>
+					<textarea placeholder="description about your files or blog" rows="3" cols="20" id="des" name="des" class="form-control mr-md-1 semail"></textarea>
 					</div>
                 </form>
 		    </div><!--//container-->
@@ -92,11 +92,15 @@
 						<div class="item mb-5">
 							<div class="media">
 								<div class="media-body">
-									<h3 class="title mb-1"><a href="blogDel-kugou.html">酷狗音乐下载应用</a></h3>
-									<div class="meta mb-1"><span class="date">Published 2 days ago</span><span class="time">5 min read</span><span class="comment"><a href="#">8 comments</a></span></div>
-									<div class="intro">酷狗音乐是目前中国国内应用最为广泛的音乐播放软件之一，但大多数的音乐下载需要vip付费服务，so，为了免费服务，有了这款小爬虫的诞生...
-									</div>
-									<a class="more-link" href="blogDel-kugou.html">Read more &rarr;</a>
+									{% for i in blogNetList %}
+										<h3 class="title mb-1"><a href={{ i.blogNet }}>{{ i.blogNet }}</a></h3>
+											<td>{{ i.id }}</td>
+											<td>{{ i.blogNet }}</td>
+											<td>{{ i.des }}</td>
+										    <a class="more-link" href={{ i.blogNet }}>Read more &rarr;</a>
+											<hr />
+									{% endfor %}
+
 								</div><!--//media-body-->
 							</div><!--//media-->
 						</div><!--//item-->
