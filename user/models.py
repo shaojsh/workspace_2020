@@ -19,6 +19,7 @@ class User(models.Model):
 
 class BlogPost(models.Model):
     class Meta:
+        ordering = ('-id',)  # 逆序排列
         db_table = 'BlogPost'
 
     id = models.AutoField(primary_key=True)
