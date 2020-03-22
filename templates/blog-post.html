@@ -93,14 +93,18 @@
 							<div class="media">
 								<div class="media-body">
 									{% for i in blogNetList %}
-										<h3 class="title mb-1"><a href={{ i.blogNet }}>{{ i.blogNet }}</a></h3>
-											<td>{{ i.id }}</td>
-											<td>{{ i.blogNet }}</td>
-											<td>{{ i.des }}</td>
-										    <a class="more-link" href={{ i.blogNet }}>Read more &rarr;</a>
-											<hr />
+										<h3 class="title mb-1"><a href={{ i.blogNet }}>{{ i.blogNet }}</a>
+											<p align="right">
+											<a href="" >
+											<img alt="image"
+							 				src="../static/images/blog/delete.png"></a>
+											</p>
+										</h3>
+										<td>{{ i.des }}</td>
+										<a class="more-link" href={{ i.blogNet }}>&nbsp;&nbsp;&nbsp;Read more &rarr;
+										<hr/>
 									{% endfor %}
-
+										</a>
 								</div><!--//media-body-->
 							</div><!--//media-->
 						</div><!--//item-->
