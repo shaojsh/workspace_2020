@@ -14,3 +14,4 @@
 # 使用模版时注意模版语法（管道语法：将传过来的值进行过滤显示：大写，取模.....等 ：|） 缺点：模版技术会让前后端分离不彻底（一般不建议使用）
 # 路由配置可以都配置在URL里面，但是，为了看起来方便，也可以配置多级路由，让url.py看起来没那么臃肿:user中建立url
 # 表需要重建时需要 python manage.py makemigrations --empty yourappname 因为缓冲原因可能需要重启下pycharm
+# asdasd
