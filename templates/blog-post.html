@@ -72,13 +72,13 @@
 		    <div class="container text-center">
 			    <h2 class="heading">DevBlog - A Blog Template Made For Developers</h2>
 			    <div class="intro">Welcome to my blog. Subscribe and get my latest blog post in your inbox.</div>
-			    <form enctype="multipart/form-data" action="http://127.0.0.1:8000/user/uploadFiles" method="post">
+			    <form id = 'blogPostForm' enctype="multipart/form-data" action="http://127.0.0.1:8000/user/uploadFiles" method="post">
 				{% csrf_token %}
 					<br>
 					<div>
 					<input type="file" name="myfile" id = "fileUpload"/>
 					<input type="text" name="blogNet" id = "blogNet" placeholder="blog转载网址"/>
-					<input type="submit" value="upload" onclick = 'emptyFun()'/>
+					<input type="submit" value="upload" onsubmit="emptyFun()"/>
 					</div>
 					<br>
 					<div>
@@ -95,7 +95,7 @@
 									{% for i in blogNetList %}
 										<h3 class="title mb-1"><a href={{ i.blogNet }}>{{ i.blogNet }}</a>
 											<p align="right">
-											<a href="" >
+											<a href="delete_class?id={{i.id}}" >
 											<img alt="image"
 							 				src="../static/images/blog/delete.png"></a>
 											</p>

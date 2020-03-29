@@ -64,6 +64,15 @@ def blogPost(request: HttpRequest):
     return render(request, "blog-post.html", {"blogNetList": blogNetList})
 
 
+def delete_class(request: HttpRequest):
+    if request.method == "GET":  # 请求方法为POST时，进行处理
+        delId = request.GET.getlist('id')
+        delId = delId.__getitem__(0)
+        BlogPost.objects.filter(id=delId).delete()
+        blogNetList = BlogPost.objects.all()  # 将数据全部展示至html中
+        return render(request, "blog-post.html", {"blogNetList": blogNetList})
+
+
 def uploadFiles(request: HttpRequest):
     if request.method == "POST":  # 请求方法为POST时，进行处理
         myFile = request.FILES.get("myfile", None)  # 获取上传的文件，如果没有文件，则默认为None

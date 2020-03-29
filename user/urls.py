@@ -10,4 +10,5 @@ urlpatterns = [
     url('ajax_song/', ajax_song),
     url(r'^blog-post', blogPost),
     url(r'^uploadFiles', uploadFiles),
+    url(r'^delete_class', delete_class),
 ]
