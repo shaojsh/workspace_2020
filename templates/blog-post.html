@@ -78,7 +78,7 @@
 					<div>
 					<input type="file" name="myfile" id = "fileUpload"/>
 					<input type="text" name="blogNet" id = "blogNet" placeholder="blog转载网址"/>
-					<input type="submit" value="upload" onsubmit="emptyFun()"/>
+					<input type="submit" value="upload" onclick="return emptyFun()"/>
 					</div>
 					<br>
 					<div>
@@ -152,15 +152,13 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 	function emptyFun(){
-		var uploadEvt  = document.getElementById('songdownload').value.length;
+		var uploadEvt  = document.getElementById('des').value.length;
 		if (uploadEvt == 0){
 			alert('请输入description');
 			return false;
 		}
 		var fileUpload = document.getElementById('fileUpload').value;
-		alert(fileUpload)
 		var artTex = document.getElementById('fileUpload').value.length;
-		alert(artTex)
 		if (!fileUpload && artTex == 0){
 			alert('请上传文件或者输入博客转载网址');
 			return false;
