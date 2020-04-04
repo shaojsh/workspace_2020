@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^blog-post', blogPost),
     url(r'^uploadFiles', uploadFiles),
     url(r'^delete_class', delete_class),
+    url(r'^downloadFiles', downloadFiles),
 ]

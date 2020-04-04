@@ -25,7 +25,7 @@
     <show-object-properties value="false" />
     <loaded-nodes>
       <connection connection-id="e9810101-383e-4224-978a-67cc083f6d02">
-        <schema name="main" object-types="table, view" />
+        <schema name="main" object-types="view, table" />
       </connection>
     </loaded-nodes>
   </component>
@@ -41,6 +41,11 @@
     <connection id="e9810101-383e-4224-978a-67cc083f6d02" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="e9810101-383e-4224-978a-67cc083f6d02" dataset="main.auth_group_permissions" active-filter-id="895d3f15-d341-43f4-9257-7a927cc86de7">
+      <filter id="895d3f15-d341-43f4-9257-7a927cc86de7" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-actions>
     <filter-actions connection-id="e9810101-383e-4224-978a-67cc083f6d02" dataset="main.BlogPost" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">

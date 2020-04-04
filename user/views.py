@@ -3,8 +3,9 @@ import logging
 # import simplejson
 import os
 
-from django.http import JsonResponse, HttpRequest, HttpResponseBadRequest
+from django.http import JsonResponse, HttpRequest, HttpResponseRedirect, StreamingHttpResponse
 from django.shortcuts import render, HttpResponse
+
 from application import music
 
 from .models import BlogPost
@@ -103,3 +104,17 @@ def uploadFiles(request: HttpRequest):
             destination.write(chunk)
         destination.close()
         return render(request, "blog-post.html", {"blogNetList": blogNetList})
+
+
+def downloadFiles(request: HttpRequest):
+    if request.method == "GET":  # 请求方法为POST时，进行处理
+        data = request.GET.getlist('data')
+        typeFile = request.GET.getlist('type')
+        if typeFile[0] == '1':
+            file = open('E:\\upload\\'+data[0], 'rb')
+            response = StreamingHttpResponse(file)
+            response['Content-Type'] = 'application/octet-stream'
+            response['Content-Disposition'] = 'attachment;filename =' + data[0]
+            return response
+        else:
+            return HttpResponseRedirect(data[0])

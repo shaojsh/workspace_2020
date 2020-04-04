@@ -93,7 +93,9 @@
 							<div class="media">
 								<div class="media-body">
 									{% for i in blogNetList %}
-										<h3 class="title mb-1"><a href={{ i.blogNet }}>{{ i.blogNet }}</a>
+										<input type="hidden" id= 'data' value =i>
+
+										<h3 class="title mb-1"><a href="downloadFiles?data={{i.blogNet}}&&type={{i.type}}">{{ i.blogNet }}</a></button>
 											<p align="right">
 											<a href="delete_class?id={{i.id}}" >
 											<img alt="image"
@@ -164,6 +166,15 @@
 			return false;
 		}
 	}
+
+	$("#onclick").on("click",function () {
+		$.ajax({
+			url:"http://127.0.0.1:8000/user/ajax_downloadFiles",
+			type: 'get',
+			data:{"downloadFile":$("#downloadFiles").val()},
+		})
+	})
+
 </script>
 <script src="../static/plugins/jquery-3.3.1.min.js"></script>
 <script src="../static/plugins/popper.min.js"></script>
