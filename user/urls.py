@@ -13,4 +13,5 @@ urlpatterns = [
     url(r'^delete_class', delete_class),
     url(r'^downloadFiles', downloadFiles),
     url(r'^about', aboutme),
+    url(r'^searchBlogPost', searchBlogPost),
 ]

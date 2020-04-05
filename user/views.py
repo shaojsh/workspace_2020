@@ -50,6 +50,13 @@ def aboutme(request: HttpRequest):
     return render(request, 'about.html')
 
 
+def searchBlogPost(request):
+    if request.method == "GET":
+        keyworld = request.GET.get("keyword")
+        blogNetList = BlogPost.objects.filter(des__contains=keyworld)
+        return render(request, "blog-post.html", {"blogNetList": blogNetList})
+
+
 def blogPostKogou(request: HttpRequest):
     return render(request, 'blogDel-kugou.html')
 
