@@ -46,6 +46,10 @@ def index(request: HttpRequest):
     return render(request, 'index.html')
 
 
+def aboutme(request: HttpRequest):
+    return render(request, 'about.html')
+
+
 def blogPostKogou(request: HttpRequest):
     return render(request, 'blogDel-kugou.html')
 
@@ -108,10 +112,17 @@ def uploadFiles(request: HttpRequest):
 
 def downloadFiles(request: HttpRequest):
     if request.method == "GET":  # 请求方法为POST时，进行处理
-        data = request.GET.getlist('data')
         typeFile = request.GET.getlist('type')
+        cv = 'MyCV.doc'
+        if not typeFile:
+            file = open('E:\\upload\\' + cv, 'rb')
+            response = StreamingHttpResponse(file)
+            response['Content-Type'] = 'application/octet-stream'
+            response['Content-Disposition'] = 'attachment;filename =' + cv
+            return response
+        data = request.GET.getlist('data')
         if typeFile[0] == '1':
-            file = open('E:\\upload\\'+data[0], 'rb')
+            file = open('E:\\upload\\' + data[0], 'rb')
             response = StreamingHttpResponse(file)
             response['Content-Type'] = 'application/octet-stream'
             response['Content-Disposition'] = 'attachment;filename =' + data[0]
