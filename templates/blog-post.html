@@ -72,7 +72,7 @@
 		    <div class="container text-center">
 			    <h2 class="heading">DevBlog - A Blog Template Made For Developers</h2>
 			    <div class="intro">Welcome to my blog. Subscribe and get my latest blog post in your inbox.</div>
-			    <form id = 'blogPostForm' enctype="multipart/form-data" action="http://127.0.0.1:8000/user/uploadFiles" method="post">
+			    <form id = 'blogPostForm' enctype="multipart/form-data" action="/uploadFiles" method="post">
 				{% csrf_token %}
 					<br>
 					<div>
@@ -115,7 +115,7 @@
 
 				<nav class="blog-nav nav nav-justified my-5">
 				  <a class="nav-link-prev nav-item nav-link d-none rounded-left" href="#">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-				  <a class="nav-link-next nav-item nav-link rounded" href="blog-list.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				  <a class="nav-link-next nav-item nav-link rounded" href="blog-post.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
 				</nav>
 
 	    </section>
@@ -160,7 +160,7 @@
 			return false;
 		}
 		var fileUpload = document.getElementById('fileUpload').value;
-		var artTex = document.getElementById('fileUpload').value.length;
+		var artTex = document.getElementById('blogNet').value.length;
 		if (!fileUpload && artTex == 0){
 			alert('请上传文件或者输入博客转载网址');
 			return false;
