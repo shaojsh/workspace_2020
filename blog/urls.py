@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url,include
+from django.conf.urls import url, include
 from django.contrib import admin
 
 # 模版
@@ -21,12 +21,13 @@ from django.contrib import admin
 #     print(request)
 #     print(type(request))
 #     return render(request,'index.html',{'user':'hello world'})
-    #return HttpResponse('hello world')
+# return HttpResponse('hello world')
 
 urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
     # url(r'^index$', index),
     # 配置多级路由
-    url(r'^user/', include('user.urls')),
+    # 配置默认路由
+    url('^', include('user.urls')),
 ]

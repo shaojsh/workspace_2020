@@ -4,6 +4,8 @@ from .views import *
 
 urlpatterns = [
     # 配置多级路由
+    #设置默认页
+    url(r'^$', index),
     # url(r'^reg$', reg),
     url(r'^index', index),
     url(r'^blogDel-kugou', blogPostKogou),
