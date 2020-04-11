@@ -78,6 +78,11 @@ def blogPost(request: HttpRequest):
 
 def delete_class(request: HttpRequest):
     if request.method == "GET":  # 请求方法为POST时，进行处理
+        type = request.GET.getlist('type')
+        name = request.GET.getlist('name')
+        if type[0] == '1':
+            path = 'E:\\upload\\' + name[0]
+            os.remove(path)
         delId = request.GET.getlist('id')
         delId = delId.__getitem__(0)
         BlogPost.objects.filter(id=delId).delete()
