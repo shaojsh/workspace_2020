@@ -29,7 +29,7 @@ importlib-resources==1.4.0
 Jinja2==2.10.3
 kaitaistruct==0.8
 ldap3==2.5.2
-lxml==4.4.2
+lxml==4.6.2
 MarkupSafe==1.1.1
 mitmproxy==4.0.4
 passlib==1.7.1
