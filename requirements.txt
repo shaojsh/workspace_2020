@@ -54,7 +54,7 @@ soupsieve==1.9.5
 sqlparse==0.3.1
 tornado==5.1.1
 UNKNOWN==0.0.0
-urllib3==1.25.6
+urllib3==1.26.5
 urwid==2.0.1
 virtualenv==20.0.16
 wsproto==0.11.0
