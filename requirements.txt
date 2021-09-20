@@ -31,7 +31,7 @@ kaitaistruct==0.8
 ldap3==2.5.2
 lxml==4.4.2
 MarkupSafe==1.1.1
-mitmproxy==4.0.4
+mitmproxy==7.0.3
 passlib==1.7.1
 pbr==5.4.4
 pefile==2019.4.18
