@@ -35,7 +35,7 @@ mitmproxy==4.0.4
 passlib==1.7.1
 pbr==5.4.4
 pefile==2019.4.18
-Pillow==6.2.1
+Pillow==9.0.0
 pyasn1==0.4.8
 pycparser==2.19
 pydivert==2.1.0
